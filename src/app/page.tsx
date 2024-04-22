@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main className="">
       
-Welcome Diet Kupwara
+Welcome to  District Institute Of Education Kupwara
      
 
       
