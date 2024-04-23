@@ -25,7 +25,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="bg-slate-900 text-slate-100 ">
+      <div className="bg-slate-900 text-slate-100 max-lg:py-4">
         <div className="max-w-6xl mx-auto py-2 flex justify-between px-2 md:px-4">
           <p className="text-xs md:text-base">©Diet-Kupwara 2024</p>
           
