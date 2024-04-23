@@ -1,6 +1,7 @@
 "use client";
 
 import { links } from '@/constants';
+import Image from 'next/image';
 import Link from 'next/link'
 import React, { useState } from 'react'
 import { FaBars } from "react-icons/fa";
@@ -15,15 +16,15 @@ const Navbar = () => {
     <header className="bg-slate-900 text-slate-100">
       <nav className="px-4 relative bg-slate-900 text-slate-100 flex justify-between items-center h-16 max-w-6xl mx-auto z-30 shadow-xl transition-all duration-500">
       <Link href="/">
-        <div className="flex items-end">
+        <div className="flex items-center justify-center">
          
-          {/* <Image
-            src="/Images/logo-white.png"
+          <Image
+            src="/Images/logo.png"
             alt="forests"
-            width={30}
-            height={30}
+            width={50}
+            height={50}
             className="md:w-12  md:h-12"
-          /> */}
+          />
 
           <h2 className="text-base md:text-lg font-bold leading-tight md:pb-1  ">
             DIET<span className="text-sky-500 ">Kupwara</span>
