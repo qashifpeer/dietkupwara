@@ -13,7 +13,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto">
         <div className="flex">
           <div className="flex flex-col w-1/2 px-2 py-2">
-            <Image src="/images/logo.png" width={60} height={60} alt="logo" />
+            <Image src="/Images/logo.png" width={60} height={60} alt="logo" />
             <p className="text-base leading-5">
             Dedicated to excellence, District Institute of Education and Training Kupwara offers premier government training programs, fostering educational growth and empowering educators for a brighter teaching learning experience. 
             </p>
