@@ -18,3 +18,18 @@ export const links = [
     },
 
 ];
+
+export const carousalPics = [
+    {
+        title: "DIET Kupwara",
+        path: "/Images/c1.jpg",
+    },
+    {
+        title: "DIET Kupwara",
+        path: "/Images/c2.jpg",
+    },
+    {
+        title: "DIET Kupwara",
+        path: "/Images/c3.jpg",
+    }
+];
