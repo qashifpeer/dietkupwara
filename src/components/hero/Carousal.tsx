@@ -21,7 +21,7 @@ function Carousal() {
     <div className="min-h-[70vh]">
       <Carousel
         plugins={[plugin.current]}
-        className="w-full max-w-6xl h-[50vh] mx-auto"
+        className="w-full max-w-6xl h-[70vh] mx-auto"
         onMouseEnter={plugin.current.stop}
         onMouseLeave={plugin.current.reset}
       >
@@ -93,7 +93,7 @@ function Carousal() {
           <CarouselItem>
             <div className="p-1">
               <div>
-                <CardContent className="flex h-[50vh] items-center justify-center p-4">
+                <CardContent className="flex h-[70vh] items-center justify-center p-4">
                   {/* <span className="text-4xl font-semibold">1</span> */}
                   <Image
                     src="/Images/c5.jpg"
