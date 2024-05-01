@@ -18,7 +18,7 @@ function Carousal() {
     Autoplay({ delay: 2000, stopOnInteraction: true })
   );
   return (
-    <div className="">
+    <div className="min-h-[70vh]">
       <Carousel
         plugins={[plugin.current]}
         className="w-full max-w-6xl h-[50vh] mx-auto"
@@ -28,7 +28,7 @@ function Carousal() {
         <CarouselContent >
           <CarouselItem>
             <div className="">
-              <CardContent className="flex h-[50vh] items-center justify-center p-4 ">
+              <CardContent className="flex h-[70vh] items-center justify-center p-4 ">
                 {/* <span className="text-4xl font-semibold">2</span> */}
                 <Image
                   src="/Images/c1.jpg"
@@ -43,7 +43,7 @@ function Carousal() {
           <CarouselItem>
             <div className="p-1">
               <div>
-                <CardContent className="flex h-[50vh] items-center justify-center p-4">
+                <CardContent className="flex h-[70vh] items-center justify-center p-4">
                   {/* <span className="text-4xl font-semibold">1</span> */}
                   <Image
                     src="/Images/c2.jpg"
@@ -59,7 +59,7 @@ function Carousal() {
           <CarouselItem>
             <div className="p-1">
               <div>
-                <CardContent className="flex h-[50vh] items-center justify-center p-4">
+                <CardContent className="flex h-[70vh] items-center justify-center p-4">
                   {/* <span className="text-4xl font-semibold">1</span> */}
                   <Image
                     src="/Images/c3.jpg"
@@ -76,7 +76,7 @@ function Carousal() {
           <CarouselItem>
             <div className="p-1">
               <div>
-                <CardContent className="flex h-[50vh] items-center justify-center p-4">
+                <CardContent className="flex h-[70vh] items-center justify-center p-4">
                   {/* <span className="text-4xl font-semibold">1</span> */}
                   <Image
                     src="/Images/c4.jpg"
