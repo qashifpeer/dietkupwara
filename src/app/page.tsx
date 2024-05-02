@@ -9,9 +9,10 @@ import { DiVim } from "react-icons/di";
 export default function Home() {
   return (
     <section className="mx-auto">
+      
       {/* carousal */}
-     <Carousal />
-     <UpcomingEvents />
+     {/* <Carousal /> */}
+     {/* <UpcomingEvents /> */}
 
      
 
