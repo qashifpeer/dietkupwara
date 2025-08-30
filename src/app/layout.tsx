@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
-import { Footer, Temp } from "@/components";
+import { Footer, Nav } from "@/components";
 
-const inter = Inter({ subsets: ["latin"] });
+
 
 export const metadata: Metadata = {
   title: "DIET Kupwara",
@@ -19,8 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className=''>
-        <Temp />
-        {/* <Navbar /> */}
+        <Nav />
         <main className=''>{children}</main>
         {/* <Footer /> */}
       </body>

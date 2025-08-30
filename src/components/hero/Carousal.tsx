@@ -1,9 +1,19 @@
 "use client";
 import * as React from "react";
 import Autoplay from "embla-carousel-autoplay";
-import { carousalPics } from "@/constants/index";
+import Fade from "embla-carousel-fade"; // Add this import
 
-import { Card, CardContent } from "@/components/ui/card";
+// Import your carousalPics if used, or supply image srcs more dynamically.
+const images = [
+  {src :'/Images/c1.png'},
+  {src :'/Images/c2.jpg'},
+  {src :'/Images/c3.jpg'},
+  {src :'/Images/c4.jpg'},
+  {src :'/Images/c5.jpg'},
+
+]
+
+import { CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -17,98 +27,32 @@ function Carousal() {
   const plugin = React.useRef(
     Autoplay({ delay: 2000, stopOnInteraction: true })
   );
+  const fade = React.useRef(Fade()); // Add this line
   return (
-    <div className="min-h-[70vh]">
+    <div className="relative w-screen h-screen">
       <Carousel
-        plugins={[plugin.current]}
-        className="w-full max-w-6xl h-[70vh] mx-auto"
+        plugins={[plugin.current, fade.current]}
+        className="w-screen h-screen"
         onMouseEnter={plugin.current.stop}
         onMouseLeave={plugin.current.reset}
       >
-        <CarouselContent >
-          <CarouselItem>
-            <div className="">
-              <CardContent className="flex h-[70vh] items-center justify-center p-4 ">
-                {/* <span className="text-4xl font-semibold">2</span> */}
+        <CarouselContent>
+          {images.map((img, i) => (
+           <CarouselItem key={i} className="w-screen h-screen">
+                <div className="relative w-full h-full">
                 <Image
-                  src="/Images/c1.jpg"
-                  alt="image"
-                  width={1024}
-                  height={700}
-                  className="w-full h-full"
+                  src={img.src}
+                  alt={`Carousel image ${i + 1}`}
+                  fill
+                  className="object-cover"
+                  priority={i === 0}
                 />
-              </CardContent>
-            </div>
-          </CarouselItem>
-          <CarouselItem>
-            <div className="p-1">
-              <div>
-                <CardContent className="flex h-[70vh] items-center justify-center p-4">
-                  {/* <span className="text-4xl font-semibold">1</span> */}
-                  <Image
-                    src="/Images/c2.jpg"
-                    alt="image"
-                    width={700}
-                    height={400}
-                    className="w-full h-full"
-                  />
-                </CardContent>
               </div>
-            </div>
-          </CarouselItem>
-          <CarouselItem>
-            <div className="p-1">
-              <div>
-                <CardContent className="flex h-[70vh] items-center justify-center p-4">
-                  {/* <span className="text-4xl font-semibold">1</span> */}
-                  <Image
-                    src="/Images/c3.jpg"
-                    alt="image"
-                    width={700}
-                    height={400}
-                    className="w-full h-full"
-                  />
-                </CardContent>
-              </div>
-            </div>
-          </CarouselItem>
-
-          <CarouselItem>
-            <div className="p-1">
-              <div>
-                <CardContent className="flex h-[70vh] items-center justify-center p-4">
-                  {/* <span className="text-4xl font-semibold">1</span> */}
-                  <Image
-                    src="/Images/c4.jpg"
-                    alt="image"
-                    width={700}
-                    height={400}
-                    className="w-full h-full"
-                  />
-                </CardContent>
-              </div>
-            </div>
-          </CarouselItem>
-
-          <CarouselItem>
-            <div className="p-1">
-              <div>
-                <CardContent className="flex h-[70vh] items-center justify-center p-4">
-                  {/* <span className="text-4xl font-semibold">1</span> */}
-                  <Image
-                    src="/Images/c5.jpg"
-                    alt="image"
-                    width={700}
-                    height={400}
-                    className="w-full h-full"
-                  />
-                </CardContent>
-              </div>
-            </div>
-          </CarouselItem>
+            </CarouselItem>
+          ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-black bg-opacity-40 rounded-full p-3 text-white"/>
+        <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-black bg-opacity-40 rounded-full p-3 text-white" />
       </Carousel>
     </div>
   );
