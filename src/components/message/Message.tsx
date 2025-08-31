@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import React from "react";
 
 const Message: React.FC = () => {
@@ -9,18 +10,20 @@ const Message: React.FC = () => {
       <div className="w-2/5 flex items-center justify-center">
         <div className="w-72 h-96 border-8 border-gray-300 shadow-lg rounded-lg overflow-hidden select-none">
           {/* Dummy Picture placeholder */}
-          <img
-            src="https://via.placeholder.com/288x384?text=Principal+Photo"
+          <Image
+            src={""}
             alt="Principal"
             className="w-full h-full object-cover"
             draggable={false}
+            width={400}
+            height={400}
           />
         </div>
       </div>
 
       {/* Right side - Message */}
-      <article className="w-3/5 overflow-y-auto text-gray-900 leading-relaxed text-lg">
-        <h2 className="text-3xl font-semibold mb-6">
+      <article className="w-3/5 overflow-y-auto text-gray-900 leading-relaxed text-sm">
+        <h2 className="text-xl font-semibold mb-6">
           Message from the Principal
         </h2>
         <p className="mb-4">
@@ -44,12 +47,7 @@ const Message: React.FC = () => {
         <p className="mb-4">
           We take pride in our state-of-the-art facilities, which have been
           thoughtfully designed to provide an enriching environment conducive to
-          learning and collaboration. The well-equipped classrooms, digital
-          libraries, and interactive labs serve as vital resources that support
-          both our faculty and trainees in exploring diverse educational
-          dimensions. These facilities are not only about infrastructure but
-          also about promoting creativity, critical thinking, and
-          problem-solving skills.
+          learning and collaboration. 
         </p>
         <p className="mb-4">
           The holistic development of teachers is paramount to our vision. This
@@ -60,14 +58,7 @@ const Message: React.FC = () => {
           community engagement, recognizing that effective teaching flows from
           well-rounded individuals.
         </p>
-        <p className="mb-4">
-          In an ever-changing educational landscape, adaptability and resilience
-          are crucial. We strive to cultivate these qualities through
-          experiential learning and reflective practices embedded in our
-          training modules. Our collaborations with educational experts and
-          institutions ensure that the latest research and global best practices
-          influence our programs, keeping our teachers ahead of the curve.
-        </p>
+        
         <p>
           Ultimately, our goal is to build a vibrant community of educators who
           are confident, innovative, and dedicated to fostering creativity and
