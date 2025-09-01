@@ -4,6 +4,7 @@ import Carousal from "./hero/Carousal";
 import UpcomingEvents from "./events/UpcomingEvents";
 import Nav from "./nav/Nav";
 import Message from './message/Message';
+import EmployeeCard from "./employeeCard/EmployeeCard";
 
 
 
@@ -14,6 +15,7 @@ export {
     Carousal,
     UpcomingEvents,
     Message,
+    EmployeeCard,
    
    
 }

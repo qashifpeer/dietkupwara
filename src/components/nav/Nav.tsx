@@ -2,8 +2,16 @@
 
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 
-const navItems = ["home", "about", "faculty", "events", "contact"] as const;
+
+const navItems = [
+  { label: "home", href: "/" },
+  { label: "about", href: "/about" },
+  { label: "admin", href: "/administration" },
+  { label: "events", href: "/events" },
+  { label: "contact", href: "/contact" },
+] as const;
 type NavItem = (typeof navItems)[number];
 
 const Nav: React.FC = () => {
@@ -55,8 +63,13 @@ const Nav: React.FC = () => {
         {/* Desktop Nav Items */}
         <ul className="hidden sm:flex space-x-8 text-white capitalize tracking-wide text-md">
           {navItems.map((item: NavItem) => (
-            <li key={item} className="hover:text-gray-300 cursor-pointer">
-              {item}
+            <li key={item.href}>
+              <Link
+                href={item.href}
+                className="hover:text-gray-300 cursor-pointer"
+              >
+                {item.label}
+              </Link>
             </li>
           ))}
         </ul>
@@ -101,12 +114,14 @@ const Nav: React.FC = () => {
       >
         <ul className="flex flex-col p-4 space-y-4 text-white capitalize tracking-wide text-lg">
           {navItems.map((item: NavItem) => (
-            <li
-              key={item}
-              className="hover:text-gray-300 cursor-pointer"
-              onClick={() => setMenuOpen(false)} // Close menu on item click
-            >
-              {item}
+            <li key={item.href}>
+              <Link
+                href={item.href}
+                className="hover:text-gray-300 cursor-pointer"
+                onClick={() => setMenuOpen(false)} // close menu after click
+              >
+                {item.label}
+              </Link>
             </li>
           ))}
         </ul>
