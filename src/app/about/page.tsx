@@ -2,7 +2,10 @@ import React from 'react'
 
 const AboutUs = () => {
   return (
-    <div>page under construction..</div>
+    <div>
+
+        <button className='cursor-pointer'>hello</button>
+    </div>
   )
 }
 
