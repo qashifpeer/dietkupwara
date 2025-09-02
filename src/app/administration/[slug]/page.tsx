@@ -27,6 +27,7 @@ async function getSinglePost(slug: string) {
       name,
       email,
       contact,
+      postHeld,
       'imageUrl': profileImage.asset->url,
       'altFtImg': profileImage.alt,
       publishedAt,
@@ -124,6 +125,7 @@ const BlogPost = async ({ params }: { params: Promise<{ slug: string }> }) => {
       </div>
 <p>{data?.contact}</p>
 <p>{data?.email}</p>
+<p>{data?.postHeld}</p>
 <p className="text-7xl">website Under Construction</p>
       
     </section>

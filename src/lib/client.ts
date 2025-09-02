@@ -26,7 +26,10 @@ export async function getData(){
      contact,
       postHeld,
       qualification,
-      level,
+      level->{
+        _id,
+        title
+      },
       bio,
       "slug":slug.current,   
       categories[]->{

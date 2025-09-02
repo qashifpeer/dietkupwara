@@ -24,6 +24,13 @@ export interface Category {
   };
 }
 
+// Interface For Level
+export interface LevelType {
+  _id: string;
+  level: number;   // numeric field from your schema
+  title: string;   // optional, e.g. "Level 1"
+}
+
 export interface Employee {
   _id: string;
   name: string;
@@ -37,6 +44,7 @@ export interface Employee {
   postHeld: string;
   qualification :string;
   bio: string;
+  level: LevelType;
   categories?: Category[];
   // content: PortableTextBlock[];
 }
