@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Head from "next/head";
-import Link from "next/link";
+
 
 // Get recent posts excluding current
 async function getRecentPosts(currentSlug: string) {
@@ -124,7 +124,7 @@ const BlogPost = async ({ params }: { params: Promise<{ slug: string }> }) => {
       </div>
 <p>{data?.contact}</p>
 <p>{data?.email}</p>
-<p className="text-7xl">Page Under Construction</p>
+<p className="text-7xl">website Under Construction</p>
       
     </section>
   );
