@@ -29,6 +29,4 @@ lerna-debug.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Sanity backend (local only, don't track in GitHub)
-sanity/
-backend/
+
