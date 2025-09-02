@@ -124,7 +124,7 @@ const BlogPost = async ({ params }: { params: Promise<{ slug: string }> }) => {
       </div>
 <p>{data?.contact}</p>
 <p>{data?.email}</p>
-<p className="text-7xl">Page Under Construction</p>
+<p className="text-7xl">website Under Construction</p>
       
     </section>
   );
