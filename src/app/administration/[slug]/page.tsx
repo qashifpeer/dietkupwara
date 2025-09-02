@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Head from "next/head";
-import Link from "next/link";
+
 
 // Get recent posts excluding current
 async function getRecentPosts(currentSlug: string) {
