@@ -19,7 +19,7 @@ export default async function AdminPage() {
       
       <div className="flex justify-between items-center pl-4 my-4 bg-gradient-to-r from-orange-800 to-slate-900">
         <h1 className="text-xl text-slate-100   uppercase font-kalam py-2">
-          Administration
+          Administration 
         </h1>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

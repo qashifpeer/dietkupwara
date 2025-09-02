@@ -9,7 +9,7 @@ interface Props {
 
 const EmployeeCard = ({ postData }: Props) => {
   return (
-    <Link href={`blog/${postData.slug}`}>
+    <Link href={`administration/${postData.slug}`}>
       <div className="flex flex-col h-full shadow-md rounded overflow-hidden hover:scale-[1.02] transition-transform duration-300 bg-white">
         {/* Fixed size image wrapper */}
         <div className="relative w-full h-[450px]">

@@ -1,5 +1,7 @@
 import {createClient} from 'next-sanity';
 
+
+
 export const client = createClient({
     projectId: process.env.SANITY_PROJECT_ID,
     dataset : process.env.SANITY_DATASET || 'production',
@@ -84,4 +86,24 @@ export const getPlacesData = async () => {
   return posts;
 };
 
+
+// getting Single employee by slug
+
+export async function getEmployeeBySlug(slug: string) {
+  const query = `*[_type == "employee" && slug.current == $slug][0]{
+    _id,
+    name,
+    email,
+    contact,
+    bio,
+    slug,
+    image{
+      asset->{
+        url
+      }
+    }
+  }`;
+
+  return client.fetch(query, { slug }); // 👈 params provided here
+}
 
