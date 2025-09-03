@@ -17,7 +17,7 @@ export const client = createClient({
 export async function getData(){
     const query = 
     `
-    *[_type == 'employee'] | order(level desc)
+    *[_type == 'employee'] | order(level asc)
     {
       _id,
       name,

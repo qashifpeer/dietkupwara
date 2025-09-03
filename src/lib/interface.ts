@@ -24,6 +24,9 @@ export interface Category {
   };
 }
 
+
+
+
 export interface Employee {
   _id: string;
   name: string;
@@ -37,6 +40,7 @@ export interface Employee {
   postHeld: string;
   qualification :string;
   bio: string;
+  level: number;
   categories?: Category[];
   // content: PortableTextBlock[];
 }
