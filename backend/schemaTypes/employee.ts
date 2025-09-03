@@ -61,8 +61,7 @@ export default defineType({
       defineField({
       name: 'level',
       title: 'Level',
-      type: 'reference',
-      to: [{type: 'level'}],
+      type: 'number',
     }),
     defineField({
 
@@ -79,25 +78,25 @@ export default defineType({
             }]
            
     }),
-    //  defineField({
-    //   name: 'bio',
-    //   title: 'BIO',
-    //   type: 'string',
-    // }),
-    
-    defineField({
+     defineField({
       name: 'bio',
-      title: 'Bio',
-      type: 'array',
-      of: [
-        {
-          title: 'Block',
-          type: 'block',
-          styles: [{title: 'Normal', value: 'normal'}],
-          lists: [],
-        },
-      ],
+      title: 'BIO',
+      type: 'text',
     }),
+    
+    // defineField({
+    //   name: 'bio',
+    //   title: 'Bio',
+    //   type: 'array',
+    //   of: [
+    //     {
+    //       title: 'Block',
+    //       type: 'block',
+    //       styles: [{title: 'Normal', value: 'normal'}],
+    //       lists: [],
+    //     },
+    //   ],
+    // }),
   ],
   preview: {
     select: {

@@ -27,7 +27,7 @@ const EmployeeCard = ({ postData }: Props) => {
           <p className="text-sm text-gray-600 mt-1">{postData?.postHeld}</p>
           <p className="text-sm text-gray-600 mt-1">{postData?.email}</p>
           <p className="text-sm text-gray-600 mt-1">{postData?.contact}</p>
-          <p className="text-sm text-gray-600 mt-1">{postData?.level.title}</p>
+          {/* <p className="text-sm text-gray-600 mt-1">{postData?.level}</p> */}
         </div>
       </div>
     </Link>

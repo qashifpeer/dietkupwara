@@ -3,51 +3,29 @@ import { client } from "@/lib/client";
 import Image from "next/image";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Head from "next/head";
 
-
-// Get recent posts excluding current
-async function getRecentPosts(currentSlug: string) {
-  const query = `
-    *[_type=='employee' && slug.current != '${currentSlug}'] | order(publishedAt desc)[0...5] {
-      name,
-      'slug': slug.current,
-      'imageUrl': profileImage.asset->url
-    }
-  `;
-  const posts = await client.fetch(query);
-  return posts;
-}
-
-// Fetch single blog post data
 async function getSinglePost(slug: string) {
   const query = `
     *[_type=='employee' && slug.current == '${slug}']{
       'slug': slug.current,
       name,
+      bio,
       email,
       contact,
+      qualification,
       postHeld,
+      bornOn,
       'imageUrl': profileImage.asset->url,
       'altFtImg': profileImage.alt,
-      publishedAt,
-      categories[]->{
-        _id,
-        name,
-        'slug': slug.current
-      }, 
     }[0]`;
   const data = await client.fetch(query);
   return data;
 }
 
-// Metadata for SEO
-
-
 export async function generateMetadata(
   { params }: { params: Promise<{ slug: string }> }
 ): Promise<Metadata> {
-  const { slug } = await  params;
+  const { slug } = await params;
   const data = await getSinglePost(slug);
 
   if (!data) return notFound();
@@ -55,7 +33,7 @@ export async function generateMetadata(
   const url = `https://www.dietkupwara.in/administration/${data.slug}`;
 
   return {
-    title: data.name,
+    title: `${data.name} - Administration`,
     description: data.bio,
     alternates: {
       canonical: url,
@@ -63,73 +41,74 @@ export async function generateMetadata(
   };
 }
 
-// Blog Post Page
-const BlogPost = async ({ params }: { params: Promise<{ slug: string }> }) => {
-  const { slug } =  await  params;
+const ProfilePage = async ({ params }: { params: Promise<{ slug: string }> }) => {
+  const { slug } = await params;
   const data = await getSinglePost(slug);
 
   if (!data) return notFound();
 
   return (
-    <section className="max-w-7xl mx-auto px-4 flex flex-col gap-10 justify-center items-center pt-20 ">
-      {/* MAIN CONTENT */}
-      <div className="">
-        <Head>
-          <title>{data.title} - Nuzha Kashmir</title>
-          <meta name="description" content={data.shortDescription} />
-          <meta property="og:title" content={data.title} />
-          <meta property="og:description" content={data.shortDescription} />
-          <meta property="og:image" content={data.imageUrl} />
-          <meta
-            property="og:url"
-            content={`https://www.nuzhakashmir.com/blog/${data.slug}`}
-          />
-          <meta name="twitter:title" content={data.title} />
-          <meta name="twitter:description" content={data.shortDescription} />
-          <meta name="twitter:image" content={data.imageUrl} />
-        </Head>
-        {/* title of the post */}
-        <h1 className="text-3xl font-extrabold mb-4">{data?.name}</h1>
-
+   <div className="relative w-screen h-full bg-gradient-to-r from-slate-300 to-red-400">
+     <section className="max-w-4xl mx-auto px-4 py-16 flex flex-col items-center">
+      {/* Profile Image */}
+      {data?.imageUrl && (
         <Image
-          src={data?.imageUrl}
-          priority
-          alt={data.altFtImg}
-          width={800}
-          height={800}
-          className="rounded-lg my-4"
+          src={data.imageUrl}
+          alt={data.altFtImg || data.name}
+          width={240}
+          height={240}
+          className="rounded-full shadow-lg mb-6 object-cover"
         />
-       
+      )}
+
+      {/* Name */}
+      <h1 className="text-3xl font-extrabold text-gray-900">{data.name}</h1>
+
+      {/* Qualification */}
+      <h2 className="text-xl font-extrabold text-gray-900">({data.qualification})</h2>
+
+      {/* Bio */}
+      {data?.bio && (
+        <p className="mt-4 text-lg text-gray-700 text-center leading-relaxed max-w-2xl">
+          {data.bio}
+        </p>
+      )}
+
+   
+      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
        
 
-        {data.categories?.length > 0 && (
-          <div className="mt-8">
-            <h3 className="font-bold text-lg">Categories:</h3>
-            <ul className="flex gap-2 flex-wrap">
-              {data.categories.map(
-                (category: { _id: string; name: string; slug: string }) => (
-                  <li key={category._id}>
-                    
-                    <a
-                      href={`/${category.slug}`}
-                      className="text-blue-600 hover:underline"
-                    >
-                      {category.name}
-                    </a>
-                  </li>
-                )
-              )}
-            </ul>
+        {data.postHeld && (
+          <div className="p-4 border rounded-xl shadow-sm bg-white">
+            <h2 className="font-semibold text-gray-800 mb-1">Post Held</h2>
+            <p className="text-gray-600">{data.postHeld}</p>
+          </div>
+        )}
+
+        {data.bornOn && (
+          <div className="p-4 border rounded-xl shadow-sm bg-white">
+            <h2 className="font-semibold text-gray-800 mb-1">Born On</h2>
+            <p className="text-gray-600">{data.bornOn}</p>
+          </div>
+        )}
+
+        {data.email && (
+          <div className="p-4 border rounded-xl shadow-sm bg-white">
+            <h2 className="font-semibold text-gray-800 mb-1">Email</h2>
+            <p className="text-gray-600">{data.email}</p>
+          </div>
+        )}
+
+        {data.contact && (
+          <div className="p-4 border rounded-xl shadow-sm bg-white">
+            <h2 className="font-semibold text-gray-800 mb-1">Contact</h2>
+            <p className="text-gray-600">{data.contact}</p>
           </div>
         )}
       </div>
-<p>{data?.contact}</p>
-<p>{data?.email}</p>
-<p>{data?.postHeld}</p>
-<p className="text-7xl">website Under Construction</p>
-      
     </section>
+   </div>
   );
 };
 
-export default BlogPost;
+export default ProfilePage;
