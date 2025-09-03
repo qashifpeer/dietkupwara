@@ -5,6 +5,7 @@ import UpcomingEvents from "./events/UpcomingEvents";
 import Nav from "./nav/Nav";
 import Message from './message/Message';
 import EmployeeCard from "./employeeCard/EmployeeCard";
+import Spinner from "./spinner/Spinner";
 
 
 
@@ -16,6 +17,7 @@ export {
     UpcomingEvents,
     Message,
     EmployeeCard,
+    Spinner
    
    
 }
