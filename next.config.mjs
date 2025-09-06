@@ -2,9 +2,10 @@
 const nextConfig = {
   // output: 'export',
   images: {
-    loader: "default",
-    path: "/",
+    // loader: "default",
+    // path: "/",
     domains: ["cdn.sanity.io"],
+    unoptimized: false,  
   },
 };
 

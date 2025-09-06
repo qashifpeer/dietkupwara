@@ -50,7 +50,7 @@ const Nav: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 flex items-center justify-between h-16">
         <Image
-          src={"/Images/Logo/logo-horizontal.png"}
+          src={"/images/logo/logo-horizontal.png"}
           alt="logo-horizontal"
           width={300}
           height={100}
