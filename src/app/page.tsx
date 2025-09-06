@@ -1,5 +1,5 @@
 "use client";
-import { Carousal,  Message,  UpcomingEvents } from "@/components";
+import { AboutSection, Carousal,  } from "@/components";
 import Image from "next/image";
 import Link from "next/link";
 import { DiVim } from "react-icons/di";
@@ -13,7 +13,7 @@ export default function Home() {
       
       {/* carousal */}
      <Carousal />
-     <Message />
+     <AboutSection />
      {/* <UpcomingEvents /> */}
 
      

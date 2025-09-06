@@ -48,7 +48,7 @@ const ProfilePage = async ({ params }: { params: Promise<{ slug: string }> }) =>
   if (!data) return notFound();
 
   return (
-   <div className="relative w-screen h-full bg-gradient-to-r from-slate-300 to-red-400">
+   <div className="relative w-screen h-full bg-gradient-to-tl from-teal-400 from-0% via-indigo-600 via-50% to-emerald-700 to-100%">
      <section className="max-w-4xl mx-auto px-4 py-16 flex flex-col items-center">
       {/* Profile Image */}
       {data?.imageUrl && (

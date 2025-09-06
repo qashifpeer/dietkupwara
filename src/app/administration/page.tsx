@@ -14,7 +14,7 @@ export default async function AdminPage() {
   });
 
   return (
-    <section className="relative w-screen h-screen bg-gradient-to-r from-slate-300 to-red-400">
+    <section className="relative w-screen h-full bg-gradient-to-tl from-teal-400 from-0% via-indigo-600 via-50% to-emerald-700 to-100%">
       <div className="max-w-7xl mx-auto pt-20 p-4">
         <div className="flex justify-between items-center pl-4 my-4 bg-gradient-to-r from-orange-800 to-slate-900">
           <h1 className="text-xl text-slate-100 uppercase font-kalam py-2">
