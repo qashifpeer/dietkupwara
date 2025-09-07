@@ -32,7 +32,7 @@ function Carousal() {
   // Custom classes for responsiveness
   // Mobile: h-1/2 (50vh), Desktop: h-screen
   const containerClass =
-    "relative w-screen h-1/2 md:h-screen overflow-hidden";
+    "relative w-full h-1/2 md:h-screen overflow-hidden";
 
   return (
     <div className={containerClass}>
@@ -44,7 +44,7 @@ function Carousal() {
       >
         <CarouselContent>
           {images.map((img, i) => (
-            <CarouselItem key={i} className="w-screen h-full">
+            <CarouselItem key={i} className="w-full h-full">
               <div className="relative w-full h-full min-h-[300px]  md:min-h-screen">
                 <Image
                   src={img.src}
@@ -62,7 +62,7 @@ function Carousal() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 1 }}
-                    className="text-3xl md:text-6xl text-start montserrat-bold text-emerald-700 drop-shadow-lg mb-2"
+                    className="text-xl md:text-6xl text-start montserrat-bold text-emerald-700 drop-shadow-lg mb-2"
                   >
                     == Site Under Construction ==
                   </motion.h1>
@@ -72,7 +72,7 @@ function Carousal() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 1 }}
-                    className="text-3xl md:text-6xl text-start montserrat-bold text-sky-100 drop-shadow-lg mb-2"
+                    className="text-xl md:text-6xl text-start montserrat-bold text-sky-100 drop-shadow-lg mb-2"
                   >
                     Welcome to <span className="block">DIET Kupwara</span> 
                   </motion.h1>

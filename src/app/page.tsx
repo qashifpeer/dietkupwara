@@ -10,8 +10,6 @@ export default function Home() {
   return (
     <section className="mx-auto">
       
-      
-      {/* carousal */}
      <Carousal />
      <AboutSection />
      {/* <UpcomingEvents /> */}

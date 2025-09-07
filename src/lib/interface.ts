@@ -44,6 +44,12 @@ export interface Employee {
   categories?: Category[];
   // content: PortableTextBlock[];
 }
+export interface Message {
+  _id :string;
+  principalName : string;
+  imageUrl: string;
+}
 
 export type EmployeeType = Employee;
 export type FetchedData = Employee;
+export type MessageType = Message;
