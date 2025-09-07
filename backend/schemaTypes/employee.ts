@@ -64,7 +64,6 @@ export default defineType({
       type: 'number',
     }),
     defineField({
-
       name: 'profileImage',
       title : 'Profile Image',
       type : "image",

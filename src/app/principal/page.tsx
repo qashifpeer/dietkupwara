@@ -1,5 +1,5 @@
 import React from "react";
-import { getAboutUsData } from "@/lib/client";
+import { getPrincipalMessage } from "@/lib/client";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PortableText } from "@portabletext/react";
@@ -24,36 +24,37 @@ const portableTextComponents = {
 
 // Metadata for SEO
 export async function generateMetadata(): Promise<Metadata> {
-  const data = await getAboutUsData();
+  const data = await getPrincipalMessage();
 
   if (!data) return notFound();
 
   return {
-    title: `About Us | DIET Kupwara`,
+    title: `Principal&apos;'s Message | DIET Kupwara`,
     description:
       "Principal District Institute of Education and Trainings (DIET) Kupwara welcomes you to the premier educational Institute of district kupwara.",
     alternates: {
-      canonical: "https://www.dietkupwara.in/about",
+      canonical: "https://www.dietkupwara.in/principal",
     },
+    // metadataBase: new URL("https://www.dietkupwara.in"),
     openGraph: {
-      title: `About US | DIET Kupwara`,
+      title: `Principal&apos;'s Message | DIET Kupwara`,
       description:
         "Principal District Institute of Education and Trainings (DIET) Kupwara welcomes you to the premier educational Institute of district kupwara.",
-      url: `https://www.dietkupwara.in/about`,
+      url: `https://www.dietkupwara.in/principal`,
       images: [{ url: data.imageUrl, width: 800, height: 600 }],
       type: "article",
     },
     twitter: {
       card: "summary_large_image",
-      title: `About US | DIET Kupwara`,
-      description: "Principal District Institute of Education and Trainings (DIET) Kupwara welcomes you to the premier educational Institute of district kupwara.",
-      images: [data.imageUrl],
+      title: `Principal&apos;'s Message | DIET Kupwara`,
+      // description: data.shortDescription,
+      // images: [data.imageUrl],
     },
   };
 }
 
-export default async function AboutPage() {
-  const data = await getAboutUsData();
+export default async function PrincipalPage() {
+  const data = await getPrincipalMessage();
 
   return (
     <section className="w-full h-full bg-gradient-to-b from-stone-900 from- via-gray-900 via-100% to-stone-900 to-100%">
@@ -61,7 +62,7 @@ export default async function AboutPage() {
         {/* MAIN CONTENT */}
         <div className="">
           <Head>
-            <title>About Us | DIET Kupwara</title>
+            <title>From Principal&apos;s Desk | DIET Kupwara</title>
             <meta
               name="description"
               content={
@@ -70,7 +71,7 @@ export default async function AboutPage() {
             />
             <meta
               property="og:title"
-              content={"About Us | DIET Kupwara"}
+              content={"From Principal&apos;s Desk | DIET Kupwara"}
             />
             <meta
               property="og:description"
@@ -81,7 +82,7 @@ export default async function AboutPage() {
             <meta property="og:image" content={data.imageUrl} />
             <meta
               property="og:url"
-              content={`https://www.dietkupwara.com/about`}
+              content={`https://www.dietkupwara.com/principal`}
             />
             <meta
               name="description"
@@ -91,7 +92,7 @@ export default async function AboutPage() {
             />
             <meta
               property="og:title"
-              content={"About Us | DIET Kupwara"}
+              content={"From Principal&apos;s Desk | DIET Kupwara"}
             />
             <meta
               property="og:description"
@@ -103,14 +104,14 @@ export default async function AboutPage() {
           </Head>
           {/* title of the post */}
           <h1 className="text-3xl text-sky-300 font-extrabold mb-4">
-            About Us:
+            From the Principal DIET Kupwara&apos;s Desk{" "}
           </h1>
 
           <Image
             src={data?.imageUrl}
             priority
             alt={data.alt}
-            width={700}
+            width={300}
             height={300}
             className="rounded-lg my-4"
           />
@@ -119,7 +120,7 @@ export default async function AboutPage() {
           <div className="flex flex-col lg:flex-row gap-4">
             {/* content side*/}
 
-            <div className="mt-8 prose prose-lg  prose-strong:text-sky-200 text-sky-200  prose-headings:text-sky-100 prose-invert prose-li:marker:text-rose-500">
+            <div className="mt-8 prose prose-lg  prose-strong:text-sky-600 text-sky-200  prose-headings:text-sky-100 prose-invert prose-li:marker:text-rose-500">
               <PortableText
                 value={data.content}
                 components={portableTextComponents}
@@ -157,7 +158,7 @@ export default async function AboutPage() {
               // description: data.excerpt || data.shortDescription || "",
               mainEntityOfPage: {
                 "@type": "WebPage",
-                "@id": `https://www.dietkupwara.in/about`,
+                "@id": `https://www.dietkupwara.in/principal`,
               },
             }),
           }}

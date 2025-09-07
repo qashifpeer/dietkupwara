@@ -1,21 +1,21 @@
-import {createClient} from 'next-sanity';
+import { createClient } from 'next-sanity';
 
 
 
 export const client = createClient({
-    projectId: process.env.SANITY_PROJECT_ID,
-    dataset : process.env.SANITY_DATASET || 'production',
-    // useCdn: process.env.NODE_ENV === 'production' ? true : false,
-    useCdn: false,
-    apiVersion : '2024-04-12',
-    // token : process.env.SANITY_SECRET_TOKEN
+  projectId: process.env.SANITY_PROJECT_ID,
+  dataset: process.env.SANITY_DATASET || 'production',
+  // useCdn: process.env.NODE_ENV === 'production' ? true : false,
+  useCdn: false,
+  apiVersion: '2024-04-12',
+  // token : process.env.SANITY_SECRET_TOKEN
 });
 
 
 
 //get all posts
-export async function getData(){
-    const query = 
+export async function getData() {
+  const query =
     `
     *[_type == 'employee'] | order(level asc)
     {
@@ -38,20 +38,20 @@ export async function getData(){
         
     }
     `
-    const data = await client.fetch(query);
-    
+  const data = await client.fetch(query);
 
-    console.log("Fetching posts from Sanity...");
-    console.log("Fetched posts:", data);
+
+  console.log("Fetching posts from Sanity...");
+  console.log("Fetched posts:", data);
   return data;
-  }
+}
 
-  // get posts with destinations
-  // getData.ts
+// get posts with destinations
+// getData.ts
 
 
 export const getPlacesData = async () => {
-  const query = 
+  const query =
     `
     *[_type == 'post' && 
     "Places" in categories[]->name
@@ -106,4 +106,38 @@ export async function getEmployeeBySlug(slug: string) {
 
   return client.fetch(query, { slug }); // 👈 params provided here
 }
+
+// Principal Message
+export async function getPrincipalMessage() {
+  const query =
+    `*[_type == "principalMessage"][0]
+  {
+   _id,
+   principalName,
+   'imageUrl': profileImage.asset->url,
+    'alt': profileImage.alt,
+
+    'content' : body,
+  }`;
+  const principalMessage = await client.fetch(query);
+  return principalMessage;
+}
+
+
+// Getting About Us Data
+export async function getAboutUsData() {
+  const query =
+    `*[_type == "aboutUs"][0]
+  {
+   _id,
+   title,
+   'imageUrl': dietImage.asset->url,
+    'alt': dietImage.alt,
+     publishedAt,
+    'content' : body,
+  }`;
+  const aboutUsData = await client.fetch(query);
+  return aboutUsData;
+}
+
 
