@@ -44,7 +44,7 @@ This website serves as an official portal for information, announcements, resour
 
 ### Clone repository
 ```bash
-git clone https://github.com/your-org/dietkupwara.in.git
+git clone https://github.com/qashifpeer/dietkupwara.git
 cd dietkupwara.in
 ```
 
