@@ -8,8 +8,9 @@ import Link from "next/link";
 const navItems = [
   { label: "home", href: "/" },
   { label: "about", href: "/about" },
-  { label: "admin", href: "/administration" },
+  { label: "administration", href: "/administration" },
   { label: "events", href: "/events" },
+  { label: "downloads", href: "/downloads" },
   { label: "contact", href: "/contact" },
 ] as const;
 type NavItem = (typeof navItems)[number];

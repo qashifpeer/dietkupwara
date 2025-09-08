@@ -16,7 +16,7 @@ import Image from "next/image";
 
 // Images array (import from external file for scalability)
 const images = [
-  { src: "/images/carousal/c1.png" },
+  { src: "/images/carousal/c1.jpg" },
   { src: "/images/carousal/c2.jpg" },
   { src: "/images/carousal/c3.jpg" },
   { src: "/images/carousal/c4.jpg" },
