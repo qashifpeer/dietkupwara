@@ -62,14 +62,14 @@ const ProfilePage = async ({ params }: { params: Promise<{ slug: string }> }) =>
       )}
 
       {/* Name */}
-      <h1 className="text-3xl font-extrabold text-gray-900">{data.name}</h1>
+      <h1 className="text-3xl font-extrabold text-sky-100">{data.name}</h1>
 
       {/* Qualification */}
-      <h2 className="text-xl font-extrabold text-gray-900">({data.qualification})</h2>
+      <h2 className="text-xl font-extrabold text-sky-200">({data.qualification})</h2>
 
       {/* Bio */}
       {data?.bio && (
-        <p className="mt-4 text-lg text-gray-700 text-center leading-relaxed max-w-2xl">
+        <p className="mt-4 text-lg text-sky-100 text-center leading-relaxed max-w-2xl">
           {data.bio}
         </p>
       )}

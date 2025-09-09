@@ -4,6 +4,7 @@ import post from './post'
 import employee from './employee'
 import principalMessage from './principalMessage'
 import aboutUs from './aboutUs'
+import order from './order'
 
 
-export const schemaTypes = [post, employee, category, blockContent, principalMessage, aboutUs]
+export const schemaTypes = [post, employee, category, blockContent, principalMessage, aboutUs, order]

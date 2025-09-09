@@ -3,11 +3,11 @@ import { createClient } from 'next-sanity';
 
 
 export const client = createClient({
-  projectId: process.env.SANITY_PROJECT_ID,
-  dataset: process.env.SANITY_DATASET || 'production',
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
   // useCdn: process.env.NODE_ENV === 'production' ? true : false,
-  useCdn: false,
-  apiVersion: '2024-04-12',
+  apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION,
+  // apiVersion: '2024-04-12',
   // token : process.env.SANITY_SECRET_TOKEN
 });
 
@@ -34,15 +34,11 @@ export async function getData() {
         name,
         slug
       },
-               'content' : body
+        'content' : body
         
     }
     `
   const data = await client.fetch(query);
-
-
-  console.log("Fetching posts from Sanity...");
-  console.log("Fetched posts:", data);
   return data;
 }
 
@@ -141,3 +137,18 @@ export async function getAboutUsData() {
 }
 
 
+
+// Fetch orders with limit & offset
+export async function getOrders(limit: number, offset: number = 0) {
+  const query = `*[_type == "order"] | order(date desc) [$offset...$end] {
+    _id,
+    title,
+    date,
+    "fileUrl": file.asset->url
+  }`;
+
+  return client.fetch(query, {
+    offset,
+    end: offset + limit,
+  });
+}
