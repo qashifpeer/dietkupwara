@@ -8,6 +8,9 @@ import Spinner from "./spinner/Spinner";
 import AboutDiet from "./aboutSection/AboutDiet";
 import AboutSection from "./aboutSection/AboutSection";
 import PrincipalMessage from "./aboutSection/PrincipalMessage";
+import LatestSection from "./latestSection/LatestSection";
+import Orders from "./latestSection/Orders";
+import Downloads from "./latestSection/Downloads";
 
 
 
@@ -21,7 +24,9 @@ export {
     Spinner,
     AboutDiet,
     AboutSection,
-    
+    LatestSection,
+    Orders,
+    Downloads,
 
    
    
