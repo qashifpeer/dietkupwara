@@ -27,10 +27,11 @@ const Footer: React.FC = () => {
         <div>
           <h3 className="text-lg font-semibold mb-4">Other Resources</h3>
           <ul className="space-y-2">
+           <li> <Link href="https://dsek.jk.gov.in" className="hover:underline" >DSEK</Link></li>
            <li> <Link href="https://jkbose.nic.in" className="hover:underline" >JKBOSE</Link></li>
            <li> <Link href="https://kupwara.nic.in/" className="hover:underline" >District Admin</Link></li>
            <li> <Link href="https://jkscert.unaux.com" className="hover:underline" >JKSCERT</Link></li>
-           <li> <Link href="https://ceojk.nic.in/" className="hover:underline" >Chief Election Officer KMR</Link></li>
+           <li> <Link href="https://mdmcal.vercel.app/" className="hover:underline" >MDM Calculator</Link></li>
            {/* <li className="text-orange-800"> <Link href="/destinations/" className="hover:underline" >View All</Link></li> */}
            
             
@@ -57,9 +58,9 @@ const Footer: React.FC = () => {
 
       
         {/* Section 4 - Copyright */}
-        <div className="flex items-center  md:flex-col mt-4">
+        <div className="flex items-center text-center  flex-col mt-4">
           <p className="text-sm">Designed and Maintaned by : <a href="https://koshurcoder.in/" target="blank" className="text-orange-800 font-bold underline">Qashif Peer</a> </p>
-          <p className="text-sm">&copy; {new Date().getFullYear()} District Institute Of Education & Trainings. All rights reserved.</p>
+          <p className="text-sm">&copy; {new Date().getFullYear()} District Institute Of Education & Trainings Kupwara. All rights reserved.</p>
         </div>
       </div>
     </footer>

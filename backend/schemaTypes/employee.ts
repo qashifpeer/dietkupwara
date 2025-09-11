@@ -82,6 +82,20 @@ export default defineType({
       title: 'BIO',
       type: 'text',
     }),
+     defineField({
+      name: 'featureImage',
+       title: 'Feature Image ',
+      type : "image",
+            options : {
+                hotspot : true,
+            },
+            fields: [{
+                type: 'string',
+                name: 'alt',
+                title: 'Alt',
+            }]
+           
+    }),
     
     // defineField({
     //   name: 'bio',

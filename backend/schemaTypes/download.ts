@@ -1,13 +1,13 @@
 import { defineType, defineField } from "sanity";
 
 export default defineType({
-  name: "order",
-  title: "Order Notification",
+  name: "download",
+  title: "Downloads",
   type: "document",
   fields: [
     defineField({
       name: "title",
-      title: "Notification Title",
+      title: "Title",
       type: "string",
       validation: (Rule) => Rule.required().max(150),
     }),
@@ -21,7 +21,7 @@ export default defineType({
       },
       validation: (Rule) => Rule.required(),
     }),
-    defineField({
+       defineField({
       name: "date",
       title: "Date",
       type: "date",
@@ -32,7 +32,7 @@ export default defineType({
     }),
     defineField({
       name: "file",
-      title: "Notification File (PDF)",
+      title: "Download File (PDF)",
       type: "file",
       options: {
         accept: ".pdf",

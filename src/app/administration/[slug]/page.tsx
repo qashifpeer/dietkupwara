@@ -55,9 +55,9 @@ const ProfilePage = async ({ params }: { params: Promise<{ slug: string }> }) =>
         <Image
           src={data.imageUrl}
           alt={data.altFtImg || data.name}
-          width={240}
-          height={240}
-          className="rounded-full shadow-lg mb-6 object-cover"
+          width={400}
+          height={200}
+          className="shadow-lg mb-6 object-cover"
         />
       )}
 

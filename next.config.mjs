@@ -4,7 +4,10 @@ const nextConfig = {
   images: {
     // loader: "default",
     // path: "/",
-    domains: ["cdn.sanity.io"],
+    domains: [
+      "cdn.sanity.io",
+      "maps.googleapis.com"
+    ],
     unoptimized: false,  
   },
 };

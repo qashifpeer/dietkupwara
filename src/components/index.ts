@@ -11,6 +11,8 @@ import PrincipalMessage from "./aboutSection/PrincipalMessage";
 import LatestSection from "./latestSection/LatestSection";
 import Orders from "./latestSection/Orders";
 import Downloads from "./latestSection/Downloads";
+import SchoolInfo from "./schoolInfo/SchoolInfo";
+import LocateUs from "./locateUs/LocateUs";
 
 
 
@@ -27,6 +29,8 @@ export {
     LatestSection,
     Orders,
     Downloads,
+    SchoolInfo,
+    LocateUs
 
    
    

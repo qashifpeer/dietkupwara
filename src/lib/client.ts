@@ -136,11 +136,24 @@ export async function getAboutUsData() {
   return aboutUsData;
 }
 
-
-
 // Fetch orders with limit & offset
 export async function getOrders(limit: number, offset: number = 0) {
   const query = `*[_type == "order"] | order(date desc) [$offset...$end] {
+    _id,
+    title,
+    date,
+    "fileUrl": file.asset->url
+  }`;
+
+  return client.fetch(query, {
+    offset,
+    end: offset + limit,
+  });
+}
+
+// Fetch Downloads with limit & offset
+export async function getDownloads(limit: number, offset: number = 0) {
+  const query = `*[_type == "download"] | order(date desc) [$offset...$end] {
     _id,
     title,
     date,
