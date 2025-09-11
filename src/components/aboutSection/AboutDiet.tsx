@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { MdOutlineMoreHoriz } from "react-icons/md";
 
 const AboutDiet: React.FC = () => {
   const profilePicSrc = "/images/logo/logo.png";
@@ -43,7 +44,7 @@ const AboutDiet: React.FC = () => {
       <div className="mt-6">
         <Link href={"/about"} target="blank">
           <button className="px-4 py-2 bg-emerald-600 text-white rounded shadow hover:bg-emerald-700 transition">
-            Read More
+            Read More <MdOutlineMoreHoriz className="inline text-rose-500" />
           </button>
         </Link>
       </div>

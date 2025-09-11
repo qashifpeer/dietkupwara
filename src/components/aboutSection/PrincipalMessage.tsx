@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { MdOutlineMoreHoriz } from "react-icons/md";
 
 const PrincipalMessage: React.FC = () => {
   const profilePicSrc = "/images/principal-profile.png";
@@ -48,10 +49,10 @@ const PrincipalMessage: React.FC = () => {
       </div>
 
        {/* Read more button */}
-      <div className="mt-6 mb-16">
+      <div className="mt-6 mb-16 relative md:-bottom-10">
         <Link href={"/principal"} target="blank">
-          <button className="px-4 py-2 bg-emerald-600 text-white rounded shadow hover:bg-emerald-700 transition">
-            Read More
+          <button className="px-4 py-2 inline bg-emerald-600 group transition-shadow hover:shadow-lg duration-300 text-white rounded shadow hover:bg-emerald-700 ">
+            Read More <MdOutlineMoreHoriz className="inline text-rose-500" />
           </button>
         </Link>
       </div>
