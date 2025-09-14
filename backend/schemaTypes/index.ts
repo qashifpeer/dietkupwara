@@ -6,6 +6,7 @@ import principalMessage from './principalMessage'
 import aboutUs from './aboutUs'
 import order from './order'
 import download from './download'
+import event from './event'
 
 
 export const schemaTypes = [
@@ -16,4 +17,6 @@ export const schemaTypes = [
     principalMessage,
     aboutUs, order,
     download,
+    event,
+
 ]
