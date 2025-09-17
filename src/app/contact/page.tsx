@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="w-full h-full bg-gradient-to-b from-stone-900 from- via-gray-900 via-100% to-stone-900 to-100%">
+    <main className="w-full min-w-full bg-gradient-to-b from-stone-900 from- via-gray-900 via-100% to-stone-900 to-100%">
       <div className="max-w-5xl mx-auto px-6 py-20">
         {/* Heading */}
         <div className="flex justify-center items-center text-3xl gap-3 mb-6">
