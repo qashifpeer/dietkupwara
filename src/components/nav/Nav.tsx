@@ -11,6 +11,7 @@ const navItems = [
   { label: "administration", href: "/administration" },
   { label: "events", href: "/events" },
   { label: "downloads", href: "/downloads" },
+  { label: "gallery", href: "/gallery" },
   { label: "contact", href: "/contact" },
 ] as const;
 type NavItem = (typeof navItems)[number];
@@ -110,7 +111,7 @@ const Nav: React.FC = () => {
       {/* Mobile Menu Panel */}
       <div
         className={`sm:hidden bg-black bg-opacity-90 backdrop-blur-sm transition-max-height duration-300 ease-in-out overflow-hidden ${
-          menuOpen ? "max-h-60" : "max-h-0"
+          menuOpen ? "max-h-96" : "max-h-0"
         }`}
       >
         <ul className="flex flex-col p-4 space-y-4 text-white capitalize tracking-wide text-lg">

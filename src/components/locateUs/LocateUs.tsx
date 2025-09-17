@@ -7,7 +7,7 @@ const LocateUs = () => {
     "https://www.google.com/maps/place/DIET+Kupwara/@34.5199199,74.2340859,19.79z";
 
   return (
-    <div className="w-full px-4 py-6 flex flex-col items-center">
+    <div className="w-full px-2 py-6 flex flex-col items-center">
       <h2 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
         <FaMapMarkerAlt className="text-red-600" /> Locate Us
       </h2>

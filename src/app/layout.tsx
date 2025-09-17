@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/navbar/Navbar";
+// import Navbar from "@/components/navbar/Navbar";
 import { Footer, Nav } from "@/components";
+import ServerDown from "@/components/ServerDown";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.dietkupwara.in"),
@@ -35,9 +36,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="">
-        <Nav />
+        <ServerDown />
+        {/* <Nav /> */}
         <main className="">{children}</main>
-        <Footer />
+        {/* <Footer /> */}
 
        {/* ✅ JSON-LD structured data */}
         <script type="application/ld+json">
